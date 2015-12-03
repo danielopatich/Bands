@@ -1,49 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router';
-import jQuery from 'jquery';
+import ReactDOM from 'react-dom';
+import {Router, Route, IndexRoute} from 'react-router';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      artist: []
-    };
-    this.handleArtistData = this.handleArtistData.bind(this);
-  }
+import App from './components/app';
+import Login from './components/login';
+import Register from './components/register';
+import BandList from './components/bandList';
 
-  handleArtistData(data) {
-    this.setState({artist: data.results})
-  }
-
-  componentDidMount() {
-    jQuery.ajax({
-      url: 'https://api.spotify.com/v1/search?q=Nickelback&type=artist',
-      success: this.handleArtistData
-    });
-  }
-
-
-  render() {
-    let artistChildren = React.Children.map(this.props.children, child => {
-      return React.cloneElement(child, {artist: this.state.artist})
-    });
-    return (
-      <div className="pageWrap">
-        <Header className="head">
-          <nav>
-            <ul className="ulNav">
-              <Link to="/">Home</Link>
-              <Link to="login">Login</Link>
-              <Link to="register">Register</Link>
-            </ul>
-          </nav>
-        </Header>
-        <main>
-          {this.props.artistChildren}
-        </main>
-      </div>
-    )
-  }
-}
-
-export default App;
+let routes = (
+  <Router>
+    <Route path="/" component={App}>
+      <Route component={BandList} />
+      <Route path="login" component={Login} />
+      <Route path="register" component={Register} />
+    </Route>
+  </Router>
+)
+ReactDOM.render(routes, document.getElementById('app'));
