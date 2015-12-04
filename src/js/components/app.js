@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import jQuery from 'jquery';
 
-import BandList from './bandList';
+{/*import BandList from './bandList';*/}
 
 class App extends React.Component {
   constructor(props) {
@@ -49,9 +49,10 @@ class App extends React.Component {
           </nav>
         </header>
         <main>
-        <BandList artist={this.state.artist}
+          {/*<BandList artist={this.state.artist}
                    image={this.state.image}
-               followers={this.state.followers}/>
+               followers={this.state.followers}/>*/}
+          {artistChildren}
         </main>
       </div>
     )
