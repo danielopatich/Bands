@@ -3,5 +3,48 @@
 }
 
 body {
+  margin: 0px;
   background: url('https://www.gstatic.com/beyond/img/b1.jpg');
+}
+
+.head {
+  font-family: 'Helvetica';
+  width: 100%;
+  background: #253D41;
+  background: -webkit-linear-gradient(top, rgba(240, 106, 82, 1) 70%,rgba(255,255,255,0) 300%);
+  margin: 0;
+  display: block;
+  float: left;
+  position: relative;
+  font-size: 16px;
+  margin-top: none;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #d85f49;
+  border-bottom-style: groove;
+  a {
+    color: #F9F6ED;
+  }
+}
+
+.ulNav, .options_1, .options_2, .options_3 {
+  display: inline-block;
+  text-decoration: none;
+  margin: 8px 0;
+  float: left;
+  padding: 0 10px;
+}
+
+.login, .register {
+  height: 300px;
+  border: 1px solid #586576;
+  border-radius: 2px;
+  background: #FEA058;
+  text-align: center;
+  input {
+    opacity: .8;
+    height: 30px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+  }
 }

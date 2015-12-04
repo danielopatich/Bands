@@ -1,6 +1,25 @@
-import React from 'react'
+import React from 'react';
+import jQuery from 'jQuery';
+import { Link } from 'react-router';
 
 class Register extends React.Component {
+  // constructor(){
+  //   super(props);
+  //
+  //   this.signingUp = this.signingUp.bind(this);
+  // }
+  //
+  // signingUp(event) {
+  //   event.preventDefault();
+  //   let data = {username: this.refs.username.value,
+  //               password: this.refs.password.value};
+  //   let options = {
+  //     url: 'https://api.parse.com/1/users',
+  //     type: 'POST',
+  //     data: data
+  //   }
+  // };
+
   render () {
     return (
       <div className="register">

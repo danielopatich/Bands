@@ -1,10 +1,6 @@
-import React from 'react'
+import React, { PropTypes } from 'react';
 
 class Login extends React.Component {
-  componentDidMount(props) {
-    this.props
-  }
-
   render () {
     return (
       <div className="login">
@@ -15,8 +11,8 @@ class Login extends React.Component {
         <button className="loginBtn" value="Login"></button>
         <span>Or...<a href="/#/login">Register Here</a></span>
       </div>
-    )
+    );
   }
-};
+}
 
 export default Login;

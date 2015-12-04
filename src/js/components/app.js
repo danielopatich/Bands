@@ -2,17 +2,27 @@ import React from 'react';
 import { Link } from 'react-router';
 import jQuery from 'jquery';
 
+import BandList from './bandList';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      artist: []
+      artist: [],
+      image: [],
+      followers: []
     };
     this.handleArtistData = this.handleArtistData.bind(this);
   }
 
   handleArtistData(data) {
-    this.setState({artist: data.results})
+    let bands = data.artists.items;
+
+    this.setState({
+            artist: bands[0].name,
+             image: bands[0].images[0].url,
+         followers: bands[0].followers.total,
+    });
   }
 
   componentDidMount() {
@@ -32,14 +42,16 @@ class App extends React.Component {
         <header className="head">
           <nav>
             <ul className="ulNav">
-              <Link to="/">Home</Link>
-              <Link to="login">Login</Link>
-              <Link to="register">Register</Link>
+              <Link className="options_1" to="/">Home</Link>
+              <Link className="options_2" to="/login">Login</Link>
+              <Link className="options_3" to="/register">Register</Link>
             </ul>
           </nav>
         </header>
         <main>
-          {this.props.artistChildren}
+        <BandList artist={this.state.artist}
+                   image={this.state.image}
+               followers={this.state.followers}/>
         </main>
       </div>
     )
